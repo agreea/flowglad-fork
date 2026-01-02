@@ -12,10 +12,10 @@
     "build": "tsup",
     "clean": "rm -rf dist",
     "dev": "tsup --watch",
-    "check": "biome check . && tsc --noEmit",
+    "check": "node ../../scripts/biome.js check . && tsc --noEmit",
     "build:declarations": "tsc -p tsconfig.declarations.json",
-    "format": "biome format --write .",
-    "format:check": "biome format ."
+    "format": "node ../../scripts/biome.js format --write .",
+    "format:check": "node ../../scripts/biome.js format ."
   },
   "dependencies": {
     "@flowglad/shared": "workspace:*",

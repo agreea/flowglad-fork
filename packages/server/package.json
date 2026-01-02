@@ -22,9 +22,9 @@
     "clean": "rm -rf dist",
     "dev": "tsup --watch",
     "build:declarations": "tsc -p tsconfig.declarations.json",
-    "format": "biome format --write .",
-    "format:check": "biome format .",
-    "check": "biome check . && tsc --noEmit",
+    "format": "node ../../scripts/biome.js format --write .",
+    "format:check": "node ../../scripts/biome.js format .",
+    "check": "node ../../scripts/biome.js check . && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:integration": "vitest run --config vitest.integration.config.mts"
