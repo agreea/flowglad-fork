@@ -7,8 +7,8 @@
   "engines": {
     "node": ">=18.18.0"
   },
-  "preinstall": "bunx --bun only-allow bun",
   "scripts": {
+    "preinstall": "npx only-allow bun",
     "dev": "next dev",
     "start": "next start",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
