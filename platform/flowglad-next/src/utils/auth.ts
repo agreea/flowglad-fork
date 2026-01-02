@@ -1,6 +1,11 @@
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
-import { admin, customSession, magicLink } from 'better-auth/plugins'
+import {
+  admin,
+  customSession,
+  emailOTP,
+  magicLink,
+} from 'better-auth/plugins'
 import { headers } from 'next/headers'
 import { adminTransaction } from '@/db/adminTransaction'
 import { db } from '@/db/client'
@@ -81,6 +86,10 @@ export const auth = betterAuth({
   }),
   plugins: [
     admin(),
+    emailOTP({
+      otpLength: 6,
+      expiresIn: 600, // 10 minutes in seconds
+    }),
     customSession(async ({ user, session }) => {
       return {
         focusedRole: [],
